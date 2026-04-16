@@ -1,0 +1,26 @@
+{
+  "name": "@monohouse/ui",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./button": "./src/button/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint . --fix --cache",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json",
+    "build": "vue-tsc --noEmit -p tsconfig.json"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.18"
+  },
+  "devDependencies": {
+    "@monohouse/eslint-config": "workspace:*",
+    "@monohouse/typescript-config": "workspace:*",
+    "eslint": "^9.31.0",
+    "vue": "^3.5.18",
+    "vue-tsc": "^3.0.4"
+  }
+}

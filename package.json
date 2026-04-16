@@ -1,0 +1,32 @@
+{
+  "name": "monohouse",
+  "version": "0.1.0",
+  "description": "A monorepo architecture template package for quickly scaffolding project structures.",
+  "type": "module",
+  "bin": {
+    "monohouse": "./bin/monohouse.js"
+  },
+  "files": [
+    "bin",
+    "scripts",
+    "templates",
+    "README.md"
+  ],
+  "scripts": {
+    "prepare:templates": "node ./scripts/prepare-templates.mjs",
+    "prepack": "node ./scripts/prepare-templates.mjs"
+  },
+  "keywords": [
+    "monohouse",
+    "cli",
+    "scaffold",
+    "template"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

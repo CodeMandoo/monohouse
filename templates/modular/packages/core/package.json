@@ -1,0 +1,24 @@
+{
+  "name": "@monohouse/core",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./env": "./env/index.ts",
+    "./types": "./types/index.ts",
+    "./utils": "./utils/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint \"**/*.ts\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@monohouse/eslint-config": "workspace:*",
+    "@monohouse/typescript-config": "workspace:*",
+    "eslint": "^9.31.0",
+    "typescript": "~5.8.3"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@monohouse/http",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./client": "./src/client.ts",
+    "./types": "./src/types.ts"
+  },
+  "scripts": {
+    "lint": "eslint \"**/*.ts\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "axios": "^1.11.0"
+  },
+  "devDependencies": {
+    "@monohouse/eslint-config": "workspace:*",
+    "@monohouse/typescript-config": "workspace:*",
+    "eslint": "^9.31.0",
+    "typescript": "~5.8.3"
+  }
+}

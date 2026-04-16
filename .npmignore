@@ -1,0 +1,7 @@
+templates/**/node_modules
+templates/**/.turbo
+templates/**/dist
+templates/**/.eslintcache
+templates/**/web-dev.err.log
+templates/**/web-dev.out.log
+templates/**/pnpm-lock.yaml

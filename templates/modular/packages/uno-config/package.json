@@ -1,0 +1,7 @@
+{
+  "name": "@monohouse/uno-config",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts"
+}

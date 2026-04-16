@@ -1,0 +1,11 @@
+{
+  "name": "@monohouse/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./base.json": "./base.json",
+    "./vue-app.json": "./vue-app.json",
+    "./vue-lib.json": "./vue-lib.json"
+  }
+}

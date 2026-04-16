@@ -1,0 +1,9 @@
+{
+  "name": "@monohouse/eslint-config",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./vue": "./vue.js"
+  }
+}

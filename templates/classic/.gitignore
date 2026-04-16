@@ -1,0 +1,8 @@
+node_modules
+dist
+.turbo
+.cache
+coverage
+*.log
+auto-imports.d.ts
+components.d.ts

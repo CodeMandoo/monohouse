@@ -1,0 +1,7 @@
+{
+  "extends": "@monohouse/typescript-config/vue-lib.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": ["index.ts", "src/**/*.ts", "src/**/*.vue"]
+}

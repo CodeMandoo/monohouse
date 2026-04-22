@@ -7,6 +7,19 @@ const __dirname = path.dirname(__filename)
 const packageRoot = path.resolve(__dirname, '..')
 const templatesRoot = path.join(packageRoot, 'templates')
 const requiredTemplates = ['classic', 'modular']
+const removableNames = new Set([
+  'node_modules',
+  '.turbo',
+  'dist',
+  '.eslintcache',
+  'pnpm-lock.yaml',
+  'web-dev.err.log',
+  'web-dev.out.log',
+])
+
+function shouldRemoveEntry(entryName) {
+  return removableNames.has(entryName) || entryName.endsWith('.tsbuildinfo')
+}
 
 async function ensureDirectory(targetPath) {
   const stat = await fs.stat(targetPath).catch(() => null)
@@ -34,10 +47,30 @@ async function validateTemplate(templateName) {
   await ensureFile(path.join(templateRoot, 'turbo.json'))
 }
 
+async function removeGeneratedArtifacts(targetPath) {
+  const entries = await fs.readdir(targetPath, { withFileTypes: true })
+
+  await Promise.all(
+    entries.map(async (entry) => {
+      const entryPath = path.join(targetPath, entry.name)
+
+      if (shouldRemoveEntry(entry.name)) {
+        await fs.rm(entryPath, { recursive: true, force: true })
+        return
+      }
+
+      if (entry.isDirectory()) {
+        await removeGeneratedArtifacts(entryPath)
+      }
+    }),
+  )
+}
+
 async function main() {
   await ensureDirectory(templatesRoot)
 
   for (const templateName of requiredTemplates) {
+    await removeGeneratedArtifacts(path.join(templatesRoot, templateName))
     await validateTemplate(templateName)
   }
 

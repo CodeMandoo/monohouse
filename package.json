@@ -4,7 +4,7 @@
   "description": "A monorepo architecture template package for quickly scaffolding project structures.",
   "type": "module",
   "bin": {
-    "monohouse": "./bin/monohouse.js"
+    "monohouse": "bin/monohouse.js"
   },
   "files": [
     "bin",
